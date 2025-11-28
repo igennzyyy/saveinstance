@@ -1690,14 +1690,36 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 	local OPTIONS = {
 		mode = "optimized",
+
+	-- ⭐⭐⭐ ULTIMATE CONFIG - JANGAN SKIP APAPUN! ⭐⭐⭐
+	SaveTerrain = true,           -- Simpan terrain
+	SaveBytecode = true,          -- Simpan bytecode original
+	SaveNonCreatable = true,      -- ⭐ WAJIB untuk terrain!
+	IgnoreNotArchivable = false,  -- ⭐ Jangan skip NotArchivable
+	IgnoreDefaultProperties = false, -- ⭐ Jangan skip default properties
+	
+	-- Decompile Settings
+	Decompile = true,             -- Decompile semua scripts
+	DecompileJobless = false,     -- Fresh decompile
+	noscripts = false,            -- ⭐ JANGAN skip scripts!
+	scriptcache = true,           -- Cache aktif
+	
+	-- Ignore Lists - KOSONGKAN SEMUA!
+	IgnoreList = {},              -- ⭐ Jangan ignore apapun!
+	DecompileIgnore = {},         -- ⭐ Jangan ignore script apapun!
+	IgnoreDefaultPlayerScripts = false,
+	
+	-- Special Instances
+	NilInstances = true,          -- Simpan nil instances
+	SaveNotCreatable = true,      -- Alias SaveNonCreatable
+	
+	-- Players
+	IsolatePlayers = true,
+	RemovePlayerCharacters = false,
+	IsolateLocalPlayer = false,
+	IsolateStarterPlayer = false,
 	SaveBytecode = true, -- Menyimpan bytecode original dari scripts
 	SaveTerrain = true, -- Menyimpan terrain data
-
-	-- ⭐ FIX untuk Terrain & Module Script Kosong
-	SaveNonCreatable = true,      -- PENTING untuk terrain!
-	IgnoreNotArchivable = false,  -- Jangan skip NotArchivable (FIX module script)
-	Decompile = true,             -- Decompile semua scripts
-	DecompileJobless = false,     -- Decompile fresh (bukan dari cache)
 		noscripts = false,
 		scriptcache = true,
 		-- decomptype = "",
