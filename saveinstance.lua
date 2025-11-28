@@ -1692,6 +1692,12 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 		mode = "optimized",
 	SaveBytecode = true, -- Menyimpan bytecode original dari scripts
 	SaveTerrain = true, -- Menyimpan terrain data
+
+	-- ⭐ FIX untuk Terrain & Module Script Kosong
+	SaveNonCreatable = true,      -- PENTING untuk terrain!
+	IgnoreNotArchivable = false,  -- Jangan skip NotArchivable (FIX module script)
+	Decompile = true,             -- Decompile semua scripts
+	DecompileJobless = false,     -- Decompile fresh (bukan dari cache)
 		noscripts = false,
 		scriptcache = true,
 		-- decomptype = "",
