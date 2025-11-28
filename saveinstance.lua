@@ -1688,50 +1688,58 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 	local StatusText
 
-	local OPTIONS = {
-		mode = "optimized",
-
-	-- ⭐⭐⭐ ULTIMATE CONFIG - JANGAN SKIP APAPUN! ⭐⭐⭐
-	SaveTerrain = true,           -- Simpan terrain
-	SaveBytecode = true,          -- Simpan bytecode original
-	SaveNonCreatable = true,      -- ⭐ WAJIB untuk terrain!
-	IgnoreNotArchivable = false,  -- ⭐ Jangan skip NotArchivable
-	IgnoreDefaultProperties = false, -- ⭐ Jangan skip default properties
+local OPTIONS = {
+	-- ⭐⭐⭐ KONFIGURASI OPTIMAL - TERRAIN + SEMUA SCRIPT ⭐⭐⭐
+	mode = "full",
 	
-	-- Decompile Settings
-	Decompile = true,             -- Decompile semua scripts
-	DecompileJobless = false,     -- Fresh decompile
-	noscripts = false,            -- ⭐ JANGAN skip scripts!
-	scriptcache = true,           -- Cache aktif
+	-- TERRAIN & SCRIPT SETTINGS
+	SaveNotCreatable = true,
+	IgnoreNotArchivable = false,
+	IgnoreDefaultProperties = false,
+	noscripts = false,
+	scriptcache = true,
+	DecompileJobless = false,
+	timeout = -1,
+	SaveBytecode = true,
 	
-	-- Ignore Lists - KOSONGKAN SEMUA!
-	IgnoreList = {},              -- ⭐ Jangan ignore apapun!
-	DecompileIgnore = {},         -- ⭐ Jangan ignore script apapun!
+	-- IGNORE LISTS - KOSONGKAN!
+	DecompileIgnore = {},
+	IgnoreList = {},
 	IgnoreDefaultPlayerScripts = false,
+	IgnoreProperties = {},
 	
-	-- Special Instances
-	NilInstances = true,          -- Simpan nil instances
-	SaveNotCreatable = true,      -- Alias SaveNonCreatable
+	-- INSTANCE SETTINGS
+	NilInstances = true,
+	NilInstancesFixes = {},
 	
-	-- Players
+	-- PLAYER SETTINGS
 	IsolatePlayers = true,
 	RemovePlayerCharacters = false,
 	IsolateLocalPlayer = false,
 	IsolateStarterPlayer = false,
-	SaveBytecode = true, -- Menyimpan bytecode original dari scripts
-	SaveTerrain = true, -- Menyimpan terrain data
-		noscripts = false,
-		scriptcache = true,
-		-- decomptype = "",
-		timeout = 10,
-		-- * New:
-		__DEBUG_MODE = false,
-
-		-- Binary = false, -- true in syn newer versions (false in our case because no binary support yet), Description: Saves everything in Binary Mode (rbxl/rbxm).
-		Callback = false,
-		--Clipboard/CopyToClipboard = false, -- Description: If set to true, the serialized data will be set to the clipboard, which can be later pasted into studio easily. Useful for saving models. (Binary Only)
-		-- MaxThreads = 3 -- Description: The number of decompilation threads that can run at once. More threads means it can decompile for scripts at a time.
-		-- DisableCompression = false, --Description: Disables compression in the binary output
+	IsolateLocalPlayerCharacter = false,
+	
+	-- FILE SETTINGS
+	SaveCacheInterval = 0x1600 * 10,
+	ShowStatus = true,
+	SafeMode = false,
+	ShutdownWhenDone = false,
+	AntiIdle = true,
+	Anonymous = false,
+	ReadMe = true,
+	FilePath = false,
+	Object = false,
+	IsModel = false,
+	
+	-- COMPATIBILITY
+	IgnoreSpecialProperties = false,
+	IgnoreSharedStrings = false,
+	SharedStringOverwrite = false,
+	TreatUnionsAsParts = false,
+	AlternativeWritefile = true,
+	__DEBUG_MODE = false,
+	Callback = false,
+}
 
 		DecompileJobless = false,
 		DecompileIgnore = { -- * Clean these up (merged Old Syn and New Syn)
