@@ -1,0 +1,17 @@
+# Lua/Roblox
+*.rbxl
+*.rbxm
+*.rbxlx
+*.rbxmx
+
+# Test files
+test/
+tests/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
